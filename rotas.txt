@@ -7,7 +7,7 @@ routes.get("/", (req, res) => {
 routes.get("/roteiros", (req, res) => {
     console.log(req.params);
     res.send("Aqui estão meus roteiros");
-});
+}); 
 
 
 //rota lista de um roteiro (1 produto - id)
