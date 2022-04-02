@@ -1,16 +1,33 @@
+const Roteiros = require("../models/Roteiros.js");
+//import Product from "../models/Roteiros.js";
+
 const roteirosController = {
-    listarRoteiros(req,res) {
-        res.json ("Lista de Roteiros");
+    
+    async listarRoteiros(req,res) {
+        try {
+            const roteiros = await Roteiros.findAll();
+            res.json (roteiros);
+        } catch (error) {
+            console.log(error);
+        }
+
     },
 
-    listarUmRoteiro(req,res){
-        res.json ("Aqui está seu roteiro");
-    },
+    async listarUmRoteiro(req,res) {
+        try {
+            const roteiros = await Roteiros.findByPk(req.params.id);
+            if (!roteiros){
+                res.json ("Deu ruim!")
+            }
+            res.json (roteiros);
+        } catch (error) {
+            console.log(error);
+        }
 
-    exibirCidade(req,res) {
-        res.json("Nessa cidade temos esses roteiros")
     },
-
 };
+
+
+
 
 module.exports = roteirosController;

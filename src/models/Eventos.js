@@ -29,8 +29,9 @@ const Eventos = db.define(
         },
     }, 
     {
-    tableName: "eventos"
+    tableName: "eventos",
+    timestamps: false,
     }
 );
 
-module.exports = "Eventos";
+module.exports = Eventos;

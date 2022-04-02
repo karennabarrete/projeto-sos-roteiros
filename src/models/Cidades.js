@@ -15,8 +15,9 @@ const Cidades = db.define(
                 
     }, 
     {
-    tableName: "cidades"
+    tableName: "cidades",
+    timestamps: false,
     }
 );
 
-module.exports = "Cidades";
+module.exports = Cidades;

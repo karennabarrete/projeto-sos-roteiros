@@ -18,13 +18,14 @@ const Roteiros = db.define(
         foto_principal:{
             type: DataTypes.STRING,
         },  
-        quatidade_dias: {
+        quantidade_dias: {
             type: DataTypes.INTEGER,
         },
     }, 
     {
-    tableName: "roteiros"
+    tableName: "roteiros",
+    timestamps: false,
     }
 );
 
-module.exports = "Roteiros";
+module.exports = Roteiros;

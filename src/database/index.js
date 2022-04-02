@@ -1,13 +1,12 @@
 const Sequelize = require ("sequelize");
 
-
-const DB_NAME = "SOS Roteiros";
+const DB_NAME = "sos_roteiros";
 const DB_USER = "root";
-const DB_PASS = "mysql";
+const DB_PASS = "Mysql";
 const DB_CONFIG = {
     dialect: "mysql",
     host: "localhost",
-    port: 4406,
+    port: 3306,
 };
 
 let db = {};
