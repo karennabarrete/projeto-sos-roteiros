@@ -1,0 +1,23 @@
+//rota geral (Home)
+routes.get("/", (req, res) => {
+    res.send("Hello world!");
+});
+
+//rota lista de roteiros (produtos)
+routes.get("/roteiros", (req, res) => {
+    console.log(req.params);
+    res.send("Aqui estão meus roteiros");
+});
+
+
+//rota lista de um roteiro (1 produto - id)
+routes.get("/", (req, res) => {
+    console.log(req.params);
+    res.send("Aqui esta o roteiro de salvador!!!");
+});
+
+//rota lista por cidades (categorias)
+routes.get("/cidades", (req, res) => {
+    console.log(req.params);
+    res.send("Os roteiros de Salvador");
+});
