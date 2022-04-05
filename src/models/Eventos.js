@@ -1,6 +1,6 @@
 const db = require("../database");
 const { DataTypes } = require("sequelize");
-const Roteiros = require("./Roteiros");
+const Roteiros = require("./Roteiros.js");
 
 
 const Eventos = db.define(
@@ -34,13 +34,13 @@ const Eventos = db.define(
         },
         percurso: {
             type: DataTypes.STRING,
-        },
-        id_roteiro: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: Roteiros,
-                key: 'id',
-            }},
+        }//,
+        // id_roteiro: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: Roteiros,
+        //         key: 'id',
+        //     }},
     },{ 
     
         tableName: "eventos",

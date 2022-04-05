@@ -1,6 +1,6 @@
 const db = require("../database");
 const { DataTypes } = require("sequelize");
-const Cidades = require("./Cidades");
+const Cidades = require("./Cidades.js");
 
 const Roteiros = db.define(
     "Roteiros", 
@@ -21,13 +21,13 @@ const Roteiros = db.define(
         },  
         quantidade_dias: {
             type: DataTypes.INTEGER,
-        },
-        id_cidades: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: Cidades,
-                key: 'id',
-        }},
+        }//,
+        // id_cidades: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: Cidades,
+        //         key: 'id',
+        // }},
         
         
     },{ 
