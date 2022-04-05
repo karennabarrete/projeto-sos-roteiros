@@ -4,13 +4,10 @@ const Eventos = require ("../models/Eventos.js");
 
 const roteirosController = {
 
-   async buscarRoteiros(req,res) {
-
-    },
-    
+       
     async listarRoteiros(req,res) {
         try {
-            var roteiros;
+            let roteiros;
             if (req.query ["id_cidade"] && req.query ["dias"]){
                 roteiros = await Roteiros.findAll({where:{id_cidades:req.query ["id_cidade"],quantidade_dias:req.query["dias"] }});    
             }
