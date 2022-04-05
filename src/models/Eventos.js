@@ -1,6 +1,7 @@
 const db = require("../database");
 const { DataTypes } = require("sequelize");
 
+
 const Eventos = db.define(
     "Eventos", 
     {
@@ -9,28 +10,40 @@ const Eventos = db.define(
             primaryKey: true,
             autoIncrement: true,
         },
+        dia: {
+            type: DataTypes.INTEGER,
+        },
         nome_eventos: {
             type: DataTypes.STRING,
-        },
-        descricao_eventos: {
-            type: DataTypes.TEXT,
         },
         foto_eventos:{
             type: DataTypes.STRING,
         },  
-        dia: {
-            type: DataTypes.INTEGER,
-        },
         hora: {
             type: DataTypes.TIME,
         },
-        duracao: {
-            type: DataTypes.FLOAT,
+        descricao_eventos: {
+            type: DataTypes.TEXT,
         },
-    }, 
-    {
-    tableName: "eventos",
-    timestamps: false,
+        duracao: {
+            type: DataTypes.STRING,
+        },
+        endereco: {
+            type: DataTypes.STRING,
+        },
+        percurso: {
+            type: DataTypes.STRING,
+        },
+        id_roteiro: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'roteiros',
+                key: 'id',
+            }},
+    },{ 
+    
+        tableName: "eventos",
+        timestamps: false,
     }
 );
 

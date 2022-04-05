@@ -11,5 +11,5 @@ app.use(express.json());
 
 app.use(routes);
 
-app.listen(8000, () => console.log ("Servidor rodando na porta 4000"));
+app.listen(8000, () => console.log ("Servidor rodando na porta 8000"));
 

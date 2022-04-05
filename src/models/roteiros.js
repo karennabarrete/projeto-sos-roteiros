@@ -12,8 +12,8 @@ const Roteiros = db.define(
         nome_roteiro: {
             type: DataTypes.STRING,
         },
-        descricao_roteiro: {
-            type: DataTypes.TEXT,
+        descricao_resumida: {
+            type: DataTypes.STRING,
         },
         foto_principal:{
             type: DataTypes.STRING,
@@ -21,8 +21,16 @@ const Roteiros = db.define(
         quantidade_dias: {
             type: DataTypes.INTEGER,
         },
-    }, 
-    {
+        id_cidades: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'cidades',
+                key: 'id',
+        }},
+        
+        
+    },{ 
+    
     tableName: "roteiros",
     timestamps: false,
     }
