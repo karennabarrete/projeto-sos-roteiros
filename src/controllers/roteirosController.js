@@ -4,33 +4,29 @@ const Eventos = require ("../models/Eventos.js");
 
 const roteirosController = {
 
-
-    async buscarRoteiros(req,res) {
-        try {
-            const roteiros = await Roteiros.findByPk(req.params.id);
-            if (req.query ["id_cidade"] && req.query ["dias"]){
-                
-                const roteiros = await Roteiros.findAll({where:{id_cidade:req.query ["id_cidade"],quantidade_dias:req.query["dias"] }});    
-               
-            }
-
-            res.json (roteiros);
-        } catch (error) {
-            console.log(error);
-        }
+   async buscarRoteiros(req,res) {
 
     },
-
     
     async listarRoteiros(req,res) {
         try {
-            
-            const roteiros = await Roteiros.findAll();
+            var roteiros;
+            if (req.query ["id_cidade"] && req.query ["dias"]){
+                roteiros = await Roteiros.findAll({where:{id_cidades:req.query ["id_cidade"],quantidade_dias:req.query["dias"] }});    
+            }
+            else if (req.query ["id_cidade"] && !req.query ["dias"]){
+                roteiros = await Roteiros.findAll({where:{id_cidades:req.query ["id_cidade"]}});    
+            }
+            else if (!req.query ["id_cidade"] && req.query ["dias"]){
+                roteiros = await Roteiros.findAll({where:{quantidade_dias:req.query["dias"] }});    
+            }
+            else{
+             roteiros = await Roteiros.findAll();
+            }
             res.json (roteiros);
         } catch (error) {
             console.log(error);
         }
-
     },
 
     async listarEventos(req,res) {
@@ -40,7 +36,6 @@ const roteirosController = {
         } catch (error) {
             console.log(error);
         }
-
     },
 
 
@@ -51,7 +46,6 @@ const roteirosController = {
         } catch (error) {
             console.log(error);
         }
-
     },
 };
 
