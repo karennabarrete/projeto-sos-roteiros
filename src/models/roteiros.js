@@ -21,13 +21,13 @@ const Roteiros = db.define(
         },  
         quantidade_dias: {
             type: DataTypes.INTEGER,
-        }//,
-        // id_cidades: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: Cidades,
-        //         key: 'id',
-        // }},
+        },
+        id_cidades: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: Cidades,
+                key: 'id',
+        }},
         
         
     },{ 

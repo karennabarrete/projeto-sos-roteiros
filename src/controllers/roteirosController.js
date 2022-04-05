@@ -1,4 +1,4 @@
-const Roteiros = require("../models/Roteiros");
+const Roteiros = require("../models/Roteiros.js");
 const Cidades = require ("../models/Cidades.js");
 const Eventos = require ("../models/Eventos.js");
 

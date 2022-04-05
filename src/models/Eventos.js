@@ -34,13 +34,13 @@ const Eventos = db.define(
         },
         percurso: {
             type: DataTypes.STRING,
-        }//,
-        // id_roteiro: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: Roteiros,
-        //         key: 'id',
-        //     }},
+        },
+        id_roteiro: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: Roteiros,
+                key: 'id',
+            }},
     },{ 
     
         tableName: "eventos",
