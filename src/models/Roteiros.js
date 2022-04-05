@@ -31,6 +31,8 @@ const Roteiros = db.define(
         
         
     },{ 
+
+        
     
     tableName: "roteiros",
     timestamps: false,
