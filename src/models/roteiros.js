@@ -1,6 +1,6 @@
 const db = require("../database");
 const { DataTypes } = require("sequelize");
-const Cidades = require("Cidades");
+const Cidades = require("./Cidades");
 
 const Roteiros = db.define(
     "Roteiros", 
