@@ -43,7 +43,7 @@ const roteirosController = {
         } catch (error) {
             console.log(error);
         }
-    },
+    }
 };
 
 
