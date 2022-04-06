@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const routes = require("./routes");
 const PORT = 8000;
 
@@ -9,6 +10,8 @@ const app = express();
 db.hasConection();
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use(routes);
        
